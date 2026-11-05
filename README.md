@@ -79,6 +79,7 @@ taquicardia
 
 
 Link del excel donde se realizaron los calculos: https://docs.google.com/spreadsheets/d/e/2PACX-1vSNkSMJio5d5kaGgueQ4mV61JLNXuEeFwvLhDiPfeMh-Vd3pFvXy43zz13pNNbI_m8fOeDSbzksNlZf/pubhtml
+
 # Análisis de resultados
 A partir de los resultados obtenidos, se identificó que el monitor uMEC 100 presentó una correspondencia cercana con los valores configurados en el simulador OxSim OX-1.
 
@@ -91,16 +92,16 @@ Respecto al sistema de alarmas, se registró su activación en las cuatro condic
 
 <h1 align="center"><i><b>𝐏𝐚𝐫𝐭𝐞 C 𝐝𝐞𝐥 𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐨𝐫𝐢𝐨</b></i></h1>
 
-_DISCUSIÓN_
+__DISCUSIÓN__
 
-• Pregunta 1: ¿Cuál es el principio de operación del Pronk OxSim OX-1 para simular una onda pulsátil? 
+• __Pregunta 1: ¿Cuál es el principio de operación del Pronk OxSim OX-1 para simular una onda pulsátil?__
 
 El principio de operación del simulador Pronk OxSim OX-1 radica en su capacidad para generar una onda pulsátil recreando electrónicamente la absorción de luz, lo que le permite simular el comportamiento de la fotopletismografía humana directamente sobre los fotodiodos del oxímetro. Esto es fundamental porque el algoritmo de un monitor médico requiere identificar dos variables para calcular la SpO2: la absorción de luz constante de los tejidos (componente DC) y el aumento pulsátil de sangre arterial con cada latido (componente AC). Al conectarse a la pinza del monitor, el OX-1 detecta la luz roja e infrarroja emitida por el equipo y utiliza componentes de estado sólido para atenuar y modular rítmicamente esta luz de regreso al detector. De esta manera, el simulador recrea con precisión las variaciones cíclicas, haciendo que el software del oxímetro procese la señal como si fuera la onda fisiológica del pulso arterial de un paciente real, permitiendo así evaluar su calibración exacta.
 
-• Pregunta 2: ¿Por qué la SpO2 baja puede ser un falso positivo (falsa alarma) en una situación de mala perfusión?
+• __Pregunta 2: ¿Por qué la SpO2 baja puede ser un falso positivo (falsa alarma) en una situación de mala perfusión?__
 
 Una lectura falsamente baja de SpO2 durante un estado de mala perfusión (como en casos de shock, hipotermia o vasoconstricción) se produce porque la debilidad extrema del pulso periférico destruye la relación señal-ruido del sensor. Fisiológicamente, el volumen de sangre arterial oxigenada que logra llegar a los capilares distales es tan bajo que la señal pulsátil (AC) se vuelve casi imperceptible frente a la absorción constante del tejido (DC). Ante la pérdida de un pulso arterial claro, el algoritmo del oxímetro compensa aumentando automáticamente su ganancia (amplificación) para intentar encontrar la onda faltante. Sin embargo, esta sobre-amplificación termina captando el "ruido de fondo", específicamente las pulsaciones del lecho venoso estancado, cuya saturación de oxígeno es naturalmente mucho menor (alrededor del 75%). Como resultado, el equipo procesa erróneamente esta sangre venosa amplificada como si fuera el pulso arterial principal, arrojando un cálculo matemático de hipoxia severa y disparando una falsa alarma a pesar de que la sangre a nivel central se encuentre correctamente oxigenada.
 
-<h2 align="center">conclusión</h2>
+<h2 align="center"> __conclusión__ </h2>
 
 <h2 align="center">𝘽𝙞𝙗𝙡𝙞𝙤𝙜𝙧𝙖𝙛𝙞𝙖</h2>
