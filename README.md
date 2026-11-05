@@ -17,7 +17,9 @@ Práctica: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámica
 
 <h2 align="center">𝙤𝙗𝙟𝙚𝙩𝙞𝙫𝙤𝙨</h2>
 
-𝙊𝙗𝙟𝙚𝙩𝙞𝙫𝙤 𝙜𝙚𝙣𝙚𝙧𝙖𝙡: Evaluar el funcionamiento del monitor de signos vitales Mindray uMEC 100 mediante el simulador de parámetros hemodinámicos Pronk OxSim OX-1, verificando la precisión de las mediciones y la respuesta del sistema de alarmas ante diferentes condiciones fisiológicas y patológicas.
+𝙊𝙗𝙟𝙚𝙩𝙞𝙫𝙤 𝙜𝙚𝙣𝙚𝙧𝙖𝙡: 
+
+Evaluar el funcionamiento del monitor de signos vitales Mindray uMEC 100 mediante el simulador de parámetros hemodinámicos Pronk OxSim OX-1, verificando la precisión de las mediciones y la respuesta del sistema de alarmas ante diferentes condiciones fisiológicas y patológicas.
 
  
 𝙊𝙗𝙟𝙚𝙩𝙞𝙫𝙤𝙨 𝙀𝙨𝙥𝙚𝙘𝙞́𝙛𝙞𝙘𝙤𝙨:
