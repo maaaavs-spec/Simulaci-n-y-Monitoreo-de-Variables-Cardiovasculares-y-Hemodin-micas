@@ -99,6 +99,6 @@ simular una onda pulsátil?
 • Pregunta 2: ¿Por qué la SpO2 baja puede ser un falso positivo (falsa 
 alarma) en una situación de mala perfusión?
 
-<h2 align="center">*Conclusión*</h2>
+<h2 align="center">**Conclusión**</h2>
 
 <h2 align="center">𝘽𝙞𝙗𝙡𝙞𝙤𝙜𝙧𝙖𝙛𝙞𝙖</h2>
