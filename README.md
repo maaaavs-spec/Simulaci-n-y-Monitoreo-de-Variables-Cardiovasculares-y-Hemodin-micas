@@ -102,6 +102,40 @@ El principio de operación del simulador Pronk OxSim OX-1 radica en su capacidad
 
 Una lectura falsamente baja de SpO2 durante un estado de mala perfusión (como en casos de shock, hipotermia o vasoconstricción) se produce porque la debilidad extrema del pulso periférico destruye la relación señal-ruido del sensor. Fisiológicamente, el volumen de sangre arterial oxigenada que logra llegar a los capilares distales es tan bajo que la señal pulsátil (AC) se vuelve casi imperceptible frente a la absorción constante del tejido (DC). Ante la pérdida de un pulso arterial claro, el algoritmo del oxímetro compensa aumentando automáticamente su ganancia (amplificación) para intentar encontrar la onda faltante. Sin embargo, esta sobre-amplificación termina captando el "ruido de fondo", específicamente las pulsaciones del lecho venoso estancado, cuya saturación de oxígeno es naturalmente mucho menor (alrededor del 75%). Como resultado, el equipo procesa erróneamente esta sangre venosa amplificada como si fuera el pulso arterial principal, arrojando un cálculo matemático de hipoxia severa y disparando una falsa alarma a pesar de que la sangre a nivel central se encuentre correctamente oxigenada.
 
-<h2 align="center"> __conclusión__ </h2>
+<h2 align="center"> __CONCLUSION__ </h2>
+
+Con el simulador Pronk OxSim OX-1 se verificó el funcionamiento del monitor uMEC 100 en cuatro condiciones (bradicardia, hipoxia, baja perfusión y taquicardia). El monitor activó la alarma en las cuatro, con tiempos de respuesta de 0,12 a 1,34 s, y mostró la frecuencia con error de 0 bpm y la SpO₂ con errores de 0 a 1 punto (error porcentual máximo de 1,05 %), dentro de la especificación de ±2 % que el fabricante declara para la serie uMEC [9]. Estos resultados respaldan la confiabilidad del uMEC 100 para las pruebas realizadas, pero la muestra es pequeña (cuatro valores de SpO₂ y tres de frecuencia, un solo ensayo por condición) y las cifras del fabricante deben confirmarse en el manual del equipo. Por ser el OxSim un probador funcional, el resultado confirma que el monitor responde de forma coherente, no que su exactitud clínica esté calibrada [8].
+
+Respecto a las limitaciones del módulo OxSim para simular condiciones patológicas: sus modos documentados combinan solo SpO₂, frecuencia de pulso e índice de perfusión en 5 configuraciones fijas [3][4][5]. Salvo con la comunicación serial opcional [3], que no se usó, no permiten por ejemplo evaluar baja perfusión a 140 bpm ni valores intermedios de SpO₂, y no incluyen ECG ni arritmias, que corresponden a otros equipos de Pronk [14]. En consecuencia, la “bradicardia” y la “taquicardia” de la práctica son variaciones de la frecuencia de pulso de la oximetría y no patologías del ritmo cardíaco. Quedan pendientes los datos señalados con ⚠️ en las tablas y en el análisis.
 
 <h2 align="center">𝘽𝙞𝙗𝙡𝙞𝙤𝙜𝙧𝙖𝙛𝙞𝙖</h2>
+
+[1] Universidad Militar Nueva Granada, “Guía de Preparación Práctica de Laboratorio: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámicas,” GL-AA-F-1, Rev. 3, Bogotá, Colombia, 30 sep. 2025.
+
+[2] Shenzhen Mindray Bio-Medical Electronics Co., Ltd., “uMEC 60/uMEC 70/uMEC 80/uMEC 100/uMEC 120/uMEC 150 Patient Monitor Operator’s Manual,” Rev. 2.0, jul. 2023. [En línea]. Disponible en: https://www.mindray.com/content/dam/xpace/en/site/mdr-sscp/patient-monitor/umec-series-60-70-80-100-120-150-safety-and-performance-information.pdf
+
+[3] Medical IT, “OxSim OX-1” (página de producto). [En línea]. Disponible en: https://www.medicalitech.com/producto/ox-sim/
+
+[4] Medical IT, “Ficha técnica OxSim OX-1,” 2026. [En línea]. Disponible en: https://www.medicalitech.com/wp-content/uploads/2026/09/Ficha-Tecnica-OxSim_2026.pdf
+
+[5] McKesson Medical-Surgical, “Pronk Technologies Inc OX-1 – Pulse Oximeter Simulator OxSim” (ref. 1252995). [En línea]. Disponible en: https://mms.mckesson.com/product/1252995/Pronk-Technologies-Inc-OX-1
+
+[6] U.S. Food and Drug Administration, presentación sobre pulsioxímetros (principios de operación y baja perfusión). [En línea]. Disponible en: https://fda.gov/media/176236/download
+
+[7] Life in the Fast Lane, “Pulse Oximeter.” [En línea]. Disponible en: https://litfl.com/pulse-oximeter
+
+[8] D. J. McMahon, “There’s no such thing as a SpO2 simulator,” White paper, Fluke Biomedical. [En línea]. Disponible en: https://www.flukebiomedical.com/sites/default/files/resources/6001759_0000_ENG_A_W.PDF
+
+[9] U.S. Food and Drug Administration, notificación 510(k) K171901 (monitores de paciente Mindray serie uMEC). [En línea]. Disponible en: https://www.accessdata.fda.gov/cdrh_docs/pdf17/K171901.pdf
+
+[10] Shenzhen Mindray Bio-Medical Electronics Co., Ltd., manual del operador de un monitor de paciente Mindray (capítulo 12, “SpO2 Display”; modelo no confirmado). [En línea]. Disponible en: https://storage.mtender.gov.md/get/4046b052-0495-4933-8050-f130c40a6257-1664865639784
+
+[11] Estudio de exactitud de SpO2 de un pulsioxímetro de anillo (Movano Health), JMIR Formative Research, 2024, e54256. [En línea]. Disponible en: https://formative.jmir.org/2024/1/e54256
+
+[12] Analog Devices, “Sensinel CPM System – FDA Data” (precisión de frecuencia cardíaca según IEC 60601-2-27:2011, cl. 201.12.1.101.15). [En línea]. Disponible en: https://sensinel.analog.com/wp-content/uploads/2024/04/FDA-Data-Final.pdf
+
+[13] Respiratory-Therapy.com, “Pulse Oximetry and Low Perfusion.” [En línea]. Disponible en: https://respiratory-therapy.com/public-health/healthcare-policy/home-care/pulse-oximetry-and-low-perfusion/
+
+[14] MedicalExpo, “Pronk heart rate simulators” (catálogo de simuladores Pronk, incluye SimCube). [En línea]. Disponible en: https://www.medicalexpo.com/product-manufacturer/pronk-heart-rate-simulator-14929-28341.html
+
+[15] ZOLL Medical, “Functional testers and patient simulators,” Propaq M Rev B User Manual. [En línea]. Disponible en: https://www.manualsdir.com/manuals/355913/zoll-propaq-m-rev-b.html?page=127
