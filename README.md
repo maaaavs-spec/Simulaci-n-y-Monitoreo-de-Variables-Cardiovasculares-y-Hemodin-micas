@@ -36,14 +36,53 @@ Evaluar el funcionamiento del monitor de signos vitales Mindray uMEC 100 mediant
 3. Calcular los errores absolutos y porcentuales de las mediciones de frecuencia cardíaca y saturación de oxígeno, analizando las variaciones de las señales fotopletismográficas.
    
 <h1 align="center"><i><b>𝐏𝐚𝐫𝐭𝐞 A 𝐝𝐞𝐥 𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐨𝐫𝐢𝐨</b></i></h1>
-a. ¿Cómo colocar al uMEC 100 en modo “monitor”? 
+a. ¿Cómo colocar al uMEC 100 en modo “monitor”?
 
-b. ¿Qué tipo de parámetros o variables fisiológicas pueden simularse con el 
-Pronk OxSim OX-1? Explique cada uno. 
+Según el manual del operador de la serie uMEC (60/70/80/100/120/150), el modo de monitoreo es el modo clínico de uso más frecuente y, cuando el equipo se enciende, entra automáticamente en él (sección 3.7.1, p. 3-9) [2]. En la práctica basta con:
 
-c. En el ámbito clínico ¿Cuáles son las tolerancias o errores máximos 
-permitidos (EMP) para cada parámetro fisiológico mencionado en la parte 
-(b)? 
+Encender el monitor (sección 3.4 del manual) [2].
+Comprobar que la pantalla muestre el monitoreo normal y no la pantalla de espera (standby).
+Si el equipo estuviera en standby, salir de ese modo con Resume monitor (continúa con el paciente actual) o con Monitor (admite un paciente nuevo) (sección 3.7.4, p. 3-11) [2].
+
+Precaución: según el manual, al salir del modo de espera y reanudar el monitoreo, las alarmas permanecen pausadas durante dos minutos [2]; conviene esperar ese tiempo antes de verificar alarmas. Además del modo de monitoreo, el manual describe los modos de privacidad, nocturno y de espera (secciones 3.7.2 a 3.7.4) [2].
+
+Limitación: no revisé el procedimiento detallado de admisión de paciente (secciones 3.9 y 5.2 del manual); solo confirmé que existen [2].
+
+b. ¿Qué tipo de parámetros o variables fisiológicas pueden simularse con el Pronk OxSim OX-1? Explique cada uno.
+
+El OX-1 es un simulador óptico de SpO₂: detecta el LED rojo e infrarrojo del sensor, identifica automáticamente el tipo de sensor y devuelve la señal óptica simulada [4]. Ofrece 4 niveles de saturación, 3 frecuencias de pulso y simulación de baja perfusión [4], combinados en 5 modos fijos [3]. Los valores de cada modo, según el listado de un distribuidor que reproduce las especificaciones del fabricante [5], son:
+
+###  Modos y Condiciones Prácticas
+
+| Modo | SpO₂ (%) | Frecuencia de pulso (bpm) | Índice de perfusión (PI) | Condición usada en esta práctica |
+| :---: | :---: | :---: | :---: | :--- |
+| **1** | 85 | 80 | ≈ 2,0 | Hipoxia |
+| **2** | 95 | 40 | ≈ 2,0 | Bradicardia |
+| **3** | 98 | 80 | ≈ 2,0 | No utilizado |
+| **4** | 98 | 140 | ≈ 2,0 | Taquicardia |
+| **5** | 99 | 80 | ≈ 0,2 | Baja perfusión (*“Low Perfusion”*) |
+
+Los tres parámetros que se simulan son:
+
+Saturación periférica de oxígeno (SpO₂): porcentaje de hemoglobina oxigenada estimado a partir de la relación de absorciones R entre luz roja e infrarroja [6][7]. El OX-1 la emula mediante una señal de luz óptica [4], de modo que el monitor muestre el valor nominal de cada modo (85, 95, 98 o 99 %) [5].
+Frecuencia de pulso (FC/PR): número de pulsos por minuto que el monitor detecta en la onda pletismográfica; el simulador ofrece 40, 80 y 140 bpm [5]. El OX-1 solo genera señal óptica de SpO₂ [4]; las señales de ECG, presión no invasiva o respiración corresponden a otros equipos de Pronk, como el SimCube [14]. Inferencia (verificar en la pantalla del uMEC 100): por esa razón, el valor que se lee en la práctica debería ser la frecuencia de pulso (PR) derivada del módulo de SpO₂, no una frecuencia cardíaca derivada de ECG.
+Índice de perfusión (PI): porcentaje entre la señal pulsátil y la no pulsátil [10]; es un indicador de la intensidad del pulso y de la calidad de la señal de SpO₂ [10]. Para el módulo de SpO₂ de Mindray, un PI superior a 1 es óptimo, entre 0,3 y 1 es aceptable y por debajo de 0,3 indica baja perfusión [10]. El modo 5 del OX-1 (PI ≈ 0,2) cae por debajo de ese umbral, por lo que representa baja perfusión [5][10].
+
+El fabricante también ofrece, de forma opcional y por separado, comunicación serial para ajustes personalizados de la simulación [3]; no se usó en esta práctica.
+
+Limitación: no pude abrir el manual del operador del OX-1; los valores de los modos provienen de [3], [4] y [5]. El manual citado en [10] corresponde a un monitor Mindray con la misma numeración del capítulo 12 que el uMEC, pero no pude confirmar que sea el del uMEC 100.
+
+c. En el ámbito clínico ¿Cuáles son las tolerancias o errores máximos permitidos (EMP) para cada parámetro fisiológico mencionado en la parte (b)?
+
+### Especificaciones y Tolerancias
+
+| Parámetro | Tolerancia / EMP | Fuente |
+| :--- | :--- | :--- |
+| **SpO₂** (especificación del fabricante, serie uMEC con módulo SpO₂ Mindray) | ±2 % en 70–100 % (adulto/pediátrico); ±3 % en 70–100 % (neonato); 0–69 % no especificado | [9] |
+| **SpO₂** (requisito normativo de exactitud) | $A_{rms} \le 4\ \%$ en 70–100 % según ISO 80601-2-61 y $\le 3,5\ \%$ según la guía de la FDA | [11] |
+| **Frecuencia de pulso** (especificación del fabricante, PR del módulo SpO₂ Mindray) | ±3 bpm, rango 20–254 bpm | [9] |
+| **Frecuencia cardíaca derivada de ECG** (referencia normativa) | ±10 % o ±5 bpm, el que sea mayor (IEC 60601-2-27:2011, cl. 201.12.1.101.15) | [12] |
+| **Índice de perfusión (PI)** | No puedo confirmar un EMP normativo. Mindray da umbrales de interpretación (>1, 0,3–1, <0,3), no una tolerancia de exactitud; el OX-1 lista el PI solo como “aproximado” (≈2,0 y ≈0,2) | [5][10] |
 
 <h1 align="center"><i><b>𝐏𝐚𝐫𝐭𝐞 B 𝐝𝐞𝐥 𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐨𝐫𝐢𝐨</b></i></h1>
 
