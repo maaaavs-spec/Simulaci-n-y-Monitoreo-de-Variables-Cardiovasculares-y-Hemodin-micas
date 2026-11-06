@@ -14,6 +14,11 @@ Práctica: Simulación y Monitoreo de Variables Cardiovasculares y Hemodinámica
 
 <h2 align="center">𝙞𝙣𝙩𝙧𝙤𝙙𝙪𝙘𝙘𝙞ó𝙣</h2>
 
+En el entorno clínico es necesario monitorear de forma continua variables como la frecuencia cardíaca (FC) y la saturación periférica de oxígeno (SpO₂), y que el monitor genere alarmas cuando sus variaciones puedan representar un peligro inmediato para el paciente [1]. La pulsioximetría es una alternativa no invasiva y rápida a la punción arterial para estimar la saturación de oxígeno [6].
+
+El principio de medición es el siguiente: el sensor emite luz roja (≈660 nm) e infrarroja (≈940 nm) y un fotodetector mide cuánta luz atraviesa el tejido, porque la hemoglobina oxigenada y la desoxigenada absorben cada longitud de onda de forma distinta [6]. La señal se separa en un componente pulsátil (AC, sangre arterial) y uno no pulsátil (DC, tejidos, sangre venosa y capilar) [7]. Para cada longitud de onda se calcula el cociente AC/DC y luego la relación entre ambos, R = (AC_rojo/DC_rojo) / (AC_IR/DC_IR) [7]. Esa relación se convierte en SpO₂ mediante un algoritmo y una tabla construidos con datos de calibración [6], es decir, con una curva R propia de cada fabricante [8]. La frecuencia de pulso (PR) se obtiene de esa misma señal pulsátil; el manual del uMEC contempla ajustes de alarma y de fuente específicos para la PR (sección 12.7) [2].
+
+Para comprobar que un monitor responde a estas condiciones sin usar pacientes se emplean simuladores o probadores. El Pronk OxSim OX-1 es un dispositivo electrónico que emula la saturación de oxígeno mediante una señal de luz óptica [4] y ofrece 5 modos de simulación con distintas combinaciones de saturación, frecuencia cardíaca e índice de perfusión [3]. Es importante precisar su alcance: la norma ISO 80601-2-61 distingue entre “simulador”, “calibrador” y “probador funcional”, y exige que los manuales de los pulsioxímetros indiquen que, en general, los probadores funcionales no sirven para medir la exactitud de la SpO₂ [8]. Por eso esta práctica evalúa el funcionamiento del monitor Mindray uMEC 100 (activación de alarmas y concordancia con los valores nominales del simulador) y no su calibración absoluta.
 
 <h2 align="center">𝙤𝙗𝙟𝙚𝙩𝙞𝙫𝙤𝙨</h2>
 
