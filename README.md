@@ -87,15 +87,19 @@ c. En el ámbito clínico ¿Cuáles son las tolerancias o errores máximos permi
 <h1 align="center"><i><b>𝐏𝐚𝐫𝐭𝐞 B 𝐝𝐞𝐥 𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐨𝐫𝐢𝐨</b></i></h1>
 
 bradicardia
+
 <img width="433" height="268" alt="Captura de pantalla 2026-11-03 172025" src="https://github.com/user-attachments/assets/18459811-b88c-4982-9d54-6ae2b43503ad" />
 
 hipoxia
+
 <img width="328" height="182" alt="Captura de pantalla 2026-11-03 172325" src="https://github.com/user-attachments/assets/0c3394b4-4a87-4d94-9bb1-41b1c7b43176" />
 
 low perfusion
+
 <img width="367" height="208" alt="Captura de pantalla 2026-11-03 172432" src="https://github.com/user-attachments/assets/81961924-54d6-4a49-9b77-5eb42a8f0d9c" />
 
 taquicardia
+
 <img width="299" height="182" alt="Captura de pantalla 2026-11-03 172531" src="https://github.com/user-attachments/assets/6f16d7d4-181f-4523-9b78-6d2e91e4b86a" />
 
 # Resultados
